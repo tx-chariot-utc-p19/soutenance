@@ -1,0 +1,18 @@
+[file]
+soutenance.pdf
+[notes]
+### 6
+On a un graphe connexe dont tous les sommets sont reliés à 4 arêtes. Toutes les arêtes représentent des couloirs. Il existe des algorithmes pouvant traiter ce type de graphe, mais ils sont tous mauvais quand il y a beaucoup d'arêtes, car ils nécessitent de valuer chaque arête. De plus, le modèle mécanique nous permet de savoir qu'a priori, prendre un virage à une intersection est plus coûteux que de prendre un segment aligné.### 9
+On prend un sommet en tant que sommet initial, et un sommet en tant que destination. Le but de cet algorithme est de trouver le plus court chemin du sommet initial à chaque sommet; pour chaque sommet, on va tenter d'emprunter au moins un chemin, et la longueur de chaque chemin qu'on tentera d'emprunter, s'appellera la "distance tentée". De façon générale, quand on parlera de la distance du sommet X, on sous-entend la distance du sommet initial au sommet X en empruntant le chemin qu'on est en train d'étudier.
+
+A chaque noeud on associe une distance tentée, au début infini pour tous, sauf le sommet initial qui est à 0.
+
+On marque tous les sommets comme étant non visités. On prend un sommet, qui est le sommet qu'on est en train d'étudier, pour le moment il s'agit du sommet initial. On l'appelera le sommet en cours d'étude.
+
+(x) Pour chaque voisin non visité du sommet en cours d'étude, on souhaite calculer leurs distances tentées par le chemin qui passe par le sommet en cours. Tous les sommets ont déjà une distance tentée, mais si on en trouve une plus petite, alors on remplace la plus grande par la plus petite.
+
+On marque le sommet courant comme étant visité.
+
+Si le sommet de destination a été visité, cela signifie que l'algorithme a trouvé le plus court chemin. De plus, si la plus petite distance tentée des sommets non visités est l'infini, cela signifie qu'il n'y a pas de chemin passant par le sommet initial et ces sommets non visités.
+
+Si on continue l'algorithme, alors le sommet en cours d'étude devient celui ayant la plus petite distance tentée.
